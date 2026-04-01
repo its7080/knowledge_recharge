@@ -1,6 +1,6 @@
-# Raw PHP Learning Project
+# Raw PHP Fields Directory
 
-A simple, framework-free PHP project inspired by beginner tutorial sites.
+A simple framework-free PHP project that lists major academic domains and related subjects.
 
 ## Run locally
 
@@ -8,9 +8,10 @@ A simple, framework-free PHP project inspired by beginner tutorial sites.
 php -S localhost:8000
 ```
 
-Then open <http://localhost:8000>.
+Open <http://localhost:8000>.
 
-## Files
+## What it includes
 
-- `index.php` - Main page with a form and PHP code examples
-- `style.css` - Basic styling
+- 16 broad categories
+- subject list under each category
+- total category and subject counts at the top
