@@ -1,0 +1,202 @@
+<?php
+$fields = [
+    'Natural Sciences' => [
+        'Physics',
+        'Chemistry',
+        'Biology',
+        'Earth Science',
+        'Astronomy',
+        'Environmental Science',
+        'Oceanography',
+        'Meteorology',
+        'Geology',
+        'Ecology',
+    ],
+    'Formal Sciences' => [
+        'Mathematics',
+        'Statistics',
+        'Logic',
+        'Computer Science',
+        'Data Science',
+        'Artificial Intelligence',
+        'Information Theory',
+        'Systems Science',
+    ],
+    'Social Sciences' => [
+        'Economics',
+        'Political Science',
+        'Sociology',
+        'Anthropology',
+        'Psychology',
+        'Human Geography',
+        'Demography',
+        'International Relations',
+        'Criminology',
+        'Development Studies',
+    ],
+    'Humanities' => [
+        'History',
+        'Philosophy',
+        'Literature',
+        'Linguistics',
+        'Religious Studies',
+        'Ethics',
+        'Archaeology',
+        'Cultural Studies',
+        'Art History',
+    ],
+    'Arts & Creative Fields' => [
+        'Fine Arts',
+        'Music',
+        'Dance',
+        'Theatre',
+        'Film Studies',
+        'Photography',
+        'Graphic Design',
+        'Animation',
+        'Fashion Design',
+        'Interior Design',
+    ],
+    'Engineering & Technology' => [
+        'Mechanical Engineering',
+        'Civil Engineering',
+        'Electrical Engineering',
+        'Electronics Engineering',
+        'Computer Engineering',
+        'Software Engineering',
+        'Aerospace Engineering',
+        'Chemical Engineering',
+        'Robotics',
+        'Nanotechnology',
+    ],
+    'Medical & Health Sciences' => [
+        'Medicine (MBBS)',
+        'Nursing',
+        'Pharmacy',
+        'Dentistry',
+        'Physiotherapy',
+        'Public Health',
+        'Ayurveda',
+        'Homeopathy',
+        'Nutrition & Dietetics',
+        'Neuroscience',
+    ],
+    'Business & Management' => [
+        'Business Administration',
+        'Finance',
+        'Accounting',
+        'Marketing',
+        'Human Resource Management',
+        'Entrepreneurship',
+        'Operations Management',
+        'Supply Chain Management',
+        'E-commerce',
+        'Business Analytics',
+    ],
+    'Law & Governance' => [
+        'Law (LLB)',
+        'Constitutional Law',
+        'Criminal Law',
+        'Corporate Law',
+        'International Law',
+        'Cyber Law',
+        'Intellectual Property Law',
+        'Public Administration',
+        'Governance',
+    ],
+    'Agriculture & Allied Fields' => [
+        'Agriculture',
+        'Horticulture',
+        'Forestry',
+        'Animal Husbandry',
+        'Fisheries',
+        'Soil Science',
+        'Agribusiness',
+    ],
+    'Architecture & Planning' => [
+        'Architecture',
+        'Urban Planning',
+        'Landscape Architecture',
+        'Sustainable Design',
+    ],
+    'Education & Teaching' => [
+        'Education (B.Ed, M.Ed)',
+        'Curriculum Development',
+        'Educational Psychology',
+        'Special Education',
+        'Instructional Design',
+    ],
+    'Emerging & Modern Fields' => [
+        'Artificial Intelligence',
+        'Machine Learning',
+        'Data Engineering',
+        'Cyber Security',
+        'Blockchain',
+        'Cloud Computing',
+        'Internet of Things (IoT)',
+        'Augmented Reality (AR)',
+        'Virtual Reality (VR)',
+        'Quantum Computing',
+    ],
+    'Lifestyle & Personal Development' => [
+        'Yoga',
+        'Meditation',
+        'Fitness Science',
+        'Life Coaching',
+        'Personality Development',
+        'Communication Skills',
+    ],
+    'Entertainment & Media' => [
+        'Journalism',
+        'Mass Communication',
+        'Digital Media',
+        'Content Creation',
+        'Gaming',
+        'Film Production',
+        'Social Media Management',
+    ],
+    'Interdisciplinary Fields' => [
+        'Bioinformatics (Biology + Data Science)',
+        'Mechatronics (Mechanical + Electronics)',
+        'Computational Physics',
+        'Environmental Engineering',
+        'Behavioral Economics',
+        'Cognitive Science',
+    ],
+];
+
+$totalSubjects = 0;
+foreach ($fields as $subjects) {
+    $totalSubjects += count($subjects);
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Study Fields Directory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+    <h1>All Major Study Fields</h1>
+    <p>Simple raw PHP project listing 16 academic and career domains.</p>
+    <p class="meta">Categories: <?= count($fields) ?> | Subjects: <?= $totalSubjects ?></p>
+</header>
+
+<main class="container">
+    <?php foreach ($fields as $category => $subjects): ?>
+        <section class="card">
+            <h2><?= htmlspecialchars($category, ENT_QUOTES, 'UTF-8') ?></h2>
+            <p class="count"><?= count($subjects) ?> subjects</p>
+            <ul>
+                <?php foreach ($subjects as $subject): ?>
+                    <li><?= htmlspecialchars($subject, ENT_QUOTES, 'UTF-8') ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </section>
+    <?php endforeach; ?>
+</main>
+</body>
+</html>
